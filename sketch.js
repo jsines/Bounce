@@ -14,5 +14,10 @@ function draw() {
 }
 
 function mouseClicked(){
-	player.velY -= 50;
+	if(player.alive){
+		player.velY -= 50;
+	}else{
+		delete(player);
+		player = new Player(canvas.width / 2, canvas.height / 2);	
+	}
 }

@@ -29,7 +29,7 @@ class Player {
 				this.alive = false;
 			}
 		}else{
-			text("You died!", 10, 30)
+			text("You died!", 350, canvas.height / 2)
 		}
 	}
 }
