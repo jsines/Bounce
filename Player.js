@@ -1,4 +1,4 @@
-
+var highScore = 0;
 
 class Player {
 	constructor(x,y){
@@ -16,7 +16,9 @@ class Player {
 		ellipse(this.x, this.y, this.size)
 		fill(0)
 		textSize(32)
-		text(this.score, 400, 30)
+		text(this.score, 100, 30)
+		text("Best: " + highScore, 400, 30)
+
 	}
 
 	update(){
@@ -29,6 +31,9 @@ class Player {
 				this.alive = false;
 			}
 		}else{
+			if(player.score > highScore)
+				highScore = player.score;
+
 			text("You died!", 350, canvas.height / 2)
 		}
 	}
